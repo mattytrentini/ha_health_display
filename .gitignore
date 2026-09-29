@@ -1,0 +1,6 @@
+# Device-specific credentials and configuration
+config.py
+
+# Local test artefacts
+__pycache__/
+*.py[cod]

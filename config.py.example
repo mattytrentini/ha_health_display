@@ -1,0 +1,9 @@
+# Do not commit a real long-lived access token.
+# Use http:// for a local, non-TLS Home Assistant endpoint, or ensure your
+# MicroPython build trusts the certificate used by an https:// endpoint.
+HOME_ASSISTANT_URL = "http://homeassistant.local:8123"
+HOME_ASSISTANT_TOKEN = "paste-a-long-lived-access-token-here"
+PAIN_ENTITY_ID = "input_number.pain_level"
+
+WIFI_SSID = "your-wifi-network-name"
+WIFI_PASSWORD = "your-wifi-password"
