@@ -9,12 +9,29 @@ at every whole-number level.
 
 ## Setup
 
-1. Copy `config.py.example` to `config.py` and set the Home Assistant URL,
+1. On the connected board, install the app and its `pixel_framebuf`
+   dependency in one command:
+
+   ```python
+   import mip
+   mip.install("github:mattytrentini/ha_health_display")
+   ```
+
+   Or, from the host:
+
+   ```sh
+   mpremote mip install github:mattytrentini/ha_health_display
+   ```
+
+2. Create a root-level `config.py` from `config.py.example` and set the Home Assistant URL,
    a [long-lived access token](https://www.home-assistant.io/integrations/http/#long-lived-access-tokens),
    entity ID, Wi-Fi SSID, and Wi-Fi password.
-2. Install the framebuffer library on the board: `mip.install("github:mattytrentini/micropython-pixel-framebuf")`.
-3. Copy `main.py`, `pain_display.py`, and `config.py`
-   to the XIAO ESP32-C6, then reset it.
+3. Start the application with `import main` at the REPL, or copy `main.py`
+   from `/lib` to the filesystem root to start it automatically after reset.
+
+The installer puts application modules in `/lib`, as is standard for `mip`.
+`config.py` deliberately remains separate because it contains credentials and
+is excluded from Git.
 
 `main.py` is configured for the supplied wiring: GPIO 0, a 6 x 10 matrix,
 horizontal non-serpentine addressing, and both logical axes reversed. The

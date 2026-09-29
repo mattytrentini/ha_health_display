@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "description": "Home Assistant pain-level display for the XIAO ESP32-C6 RGB matrix",
+  "urls": [
+    ["pain_display.py", "pain_display.py"],
+    ["main.py", "main.py"],
+    ["config.py.example", "config.py.example"]
+  ],
+  "deps": [
+    ["github:mattytrentini/micropython-pixel-framebuf", "main"]
+  ]
+}
